@@ -49,7 +49,7 @@ app.post('/api/notes', (req, res) => {
                 // Push new note into notes array
                 parsedNotes.push(newNote);
                 // Rewrite db.json file of notes as a json string.
-                fs.writeFile('./db/db.json', JSON.stringify(parsedNotes, null, 4),
+                fs.writeFile('./db/db.json', JSON.stringify(parsedNotes, null, "4"),
                 // Callback function
                 (writeErr) => writeErr ? console.error(writeErr): console.info('Successfully updated notes!'));
             }
@@ -74,11 +74,9 @@ app.delete('/api/notes/:id', (req, res) => {
             notes.splice(i, 1);
         };
     };
+    fs.writeFileSync('./db/db.json', JSON.stringify(db, null, "\t"));
+    res.json(db);
 });
-
-
-
-
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))

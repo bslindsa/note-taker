@@ -2,7 +2,7 @@ const express = require('express')
 const fs = require('fs');
 const database = require('../db/db.json')
 const uuid = require('../helpers/uuid');
-const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const { readAndAppend } = require('../helpers/fsUtils');
 
 const notes = express();
 
@@ -15,10 +15,9 @@ notes.use(express.urlencoded({extended: true}));
 notes.get('/', (req, res) => {
     res.json(database);
     console.info(`${req.method} request received to get notes`);
-    fs.readFile('db/db.json', 'utf8', (err) => {
+    fs.readFile('./db/db.json', 'utf8', (err) => {
         console.error(err);
     });
-    // readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 })
 
 // POST request to add a note

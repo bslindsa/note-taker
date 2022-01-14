@@ -5,13 +5,28 @@
         "id": "b9a8"
     },
     {
-        "title": "Note 3",
-        "text": "Here is the third note on the list",
-        "id": "a4cb"
-    },
-    {
         "title": "Emily",
         "text": "Help Emily when she gets home\n",
         "id": "d758"
+    },
+    {
+        "title": "Start",
+        "text": "begin with this note",
+        "id": "ebb5"
+    },
+    {
+        "title": "End",
+        "text": "finish with this note",
+        "id": "4059"
+    },
+    {
+        "title": "Read please",
+        "text": "Please read the file this time!",
+        "id": "f376"
+    },
+    {
+        "title": "Hello",
+        "text": "it's me",
+        "id": "8e09"
     }
 ]

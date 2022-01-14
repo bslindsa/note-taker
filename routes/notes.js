@@ -1,10 +1,13 @@
-const express = require('express').Router();
+const express = require('express')
 const fs = require('fs');
 const database = require('../db/db.json')
 const uuid = require('../helpers/uuid');
 const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
 
 const notes = express();
+
+notes.use(express.json());
+notes.use(express.urlencoded({extended: true}));
 
 
 
@@ -45,7 +48,7 @@ notes.delete('/:id', (req, res) => {
             database.splice(i, 1);
         };
     };
-    // fs.writeFileSync('./db/db.json', JSON.stringify(database, null, 4));
+    fs.writeFileSync('./db/db.json', JSON.stringify(database, null, 4));
     res.json(database);
 });
 

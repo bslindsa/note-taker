@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware for parsing JSON and urlencided form data
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 
 app.use(express.static('public'));
 

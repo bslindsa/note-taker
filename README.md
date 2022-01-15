@@ -17,12 +17,18 @@ This application demonstrates the use of express.js to make a note taking app. N
 <a name="installation"></a>
 ## Installation
 
-This app is deployed in Heroku. The user can run the app from Heroku or cloned from github. 
+This app can be used with the following URL:
+
+https://note-taker712.herokuapp.com/
 
 <a name="usage"></a>
 ## Usage
 
 The index page has a button that leads to the note taking page. On this page, the user can type in a note title and text. Clicking on the save icon will save the note and the title will be added to the list on the left. Clicking on a note title on the left will display the note on the right side of the page. Clicking on the delete icon by a note title will delete the corresponding note. When viewing a note, clicking the plus button will clear the note and allow a new note to be added. 
+
+https://note-taker712.herokuapp.com/
+![The note taker application can be used to enter, view, and delete notes.](./public/assets/images/note-taker.gif)
+
 
 <a name="license"></a>
 ## License

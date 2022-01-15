@@ -1,27 +1,21 @@
-const express = require('express')
+const router = require('express').Router();
 const fs = require('fs');
 const database = require('../db/db.json')
 const uuid = require('../helpers/uuid');
-const { readAndAppend } = require('../helpers/fsUtils');
 
-const notes = express();
-
-notes.use(express.json());
-notes.use(express.urlencoded({extended: true}));
-
-
+// const notes = express();
 
 // GET request for notes 
-notes.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.json(database);
     console.info(`${req.method} request received to get notes`);
     fs.readFile('./db/db.json', 'utf8', (err) => {
         console.error(err);
     });
-})
+});
 
 // POST request to add a note
-notes.post('/', (req, res) => {
+router.post('/', (req, res) => {
     console.info(`${req.method} request received to add a note`);
     const {title, text} = req.body;
 
@@ -31,17 +25,18 @@ notes.post('/', (req, res) => {
             text,
             id: uuid(),
         };
-
-        readAndAppend(newNote, './db/db.json');
-        res.json('Note added successfully')
+        database.push(newNote);
+        res.send(database);
     }
     else {
         res.error('Error in adding note')
-    }
+    } 
 });
     
+// Delete request to delete a note
+router.delete('/:id', (req, res) => {
+    console.info(`${req.method} request received to delete a note`);
 
-notes.delete('/:id', (req, res) => {
     for (let i = 0; i < database.length; i++) {
         if (database[i].id === req.params.id) {
             database.splice(i, 1);
@@ -51,4 +46,4 @@ notes.delete('/:id', (req, res) => {
     res.json(database);
 });
 
-module.exports = notes;
+module.exports = router;

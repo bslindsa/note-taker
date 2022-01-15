@@ -1,17 +1,22 @@
 [
     {
-        "title": "Get",
-        "text": "Add this get",
-        "id": "b0c1"
+      "title": "Blink",
+      "text": "Blinking every 5 to 10 seconds will keep your eyes moist.",
+      "id": "a51e"
     },
     {
-        "title": "Another",
-        "text": "new note again\n",
-        "id": "89cd"
+      "title": "Breath",
+      "text": "It is important to allow oxygen to enter your lungs and push the carbon dioxide outside of your lungs. Without this procedure, your body will die.",
+      "id": "6210"
     },
     {
-        "title": "HOw ",
-        "text": "is this working?",
-        "id": "cc32"
+      "title": "Sleep",
+      "text": "No one knows why you need it. You just do. So close your eyes, pretend you are dead, and possibly hallucinate for the next 8 hours.",
+      "id": "dade"
+    },
+    {
+      "title": "Eat",
+      "text": "Some things are safe to ingest. Some things are not. \nCandy, good. \nTide pods, bad.",
+      "id": "785c"
     }
-]
+  ]
